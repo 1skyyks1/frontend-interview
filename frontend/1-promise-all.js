@@ -11,19 +11,19 @@ Promise.myAll = function(promises) {
         let count = 0;
         let fulfilled = 0;
         const result = [];
-        for(const promise of promises) {
+        for (const promise of promises) {
             const index = count;
             count++;
             // Promise.resolve() 用于将现有对象转为 Promise 对象，若已是 Promise 对象则原封不动返回
             Promise.resolve(promise).then((data) => {
                 result[index] = data;
                 fulfilled++;
-                if(fulfilled === count) {
+                if (fulfilled === count) {
                     res(result);
                 }
             }, rej);
         }
-        if(count === 0){
+        if (count === 0) {
             res([]);
         }
     });
