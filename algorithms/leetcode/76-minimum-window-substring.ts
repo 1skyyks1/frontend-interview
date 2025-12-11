@@ -34,7 +34,7 @@ function minWindow(s: string, t: string): string {
         }
     }
     return res;
-};
+}
 
 // 传入单字符，返回索引
 function getIdx(x: string): number {
