@@ -7,7 +7,7 @@ hero:
   text: "算法 · 手撕 · 八股文"
   tagline: Talk is cheap. Show me the code.
   image:
-    src: public/logo.svg
+    src: /logo.svg
     alt: Frontend Interview Logo
   actions:
     - theme: brand
