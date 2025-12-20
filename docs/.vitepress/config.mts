@@ -31,12 +31,15 @@ export default defineConfig({
           text: 'LeetCode',
           collapsed: false,
           items: [
+            { text: '41. 缺失的第一个正数', link: '/dsa/leetcode/41-first-missing-positive' },
             { text: '53. 最大子数组和', link: '/dsa/leetcode/53-maximum-subarray' },
             { text: '56. 合并区间', link: '/dsa/leetcode/56-merge-intervals' },
             { text: '76. 最小覆盖子串', link: '/dsa/leetcode/76-minimum-window-substring' },
             { text: '189. 轮转数组', link: '/dsa/leetcode/189-rotate-array' },
             { text: '238. 除自身以外数组的乘积', link: '/dsa/leetcode/238-product-of-array-except-self' },
-            { text: '239. 滑动窗口最大值', link: '/dsa/leetcode/239-sliding-window-maximum' }
+            { text: '239. 滑动窗口最大值', link: '/dsa/leetcode/239-sliding-window-maximum' },
+            { text: '643. 子数组最大平均数 I', link: '/dsa/leetcode/643-maximum-average-subarray-i' },
+            { text: '1456. 定长子串中元音的最大数目', link: '/dsa/leetcode/1456-maximum-number-of-vowels-in-a-substring-of-given-length' }
           ]
         },
         {
