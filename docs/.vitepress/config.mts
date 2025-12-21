@@ -39,7 +39,9 @@ export default defineConfig({
             { text: '238. 除自身以外数组的乘积', link: '/dsa/leetcode/238-product-of-array-except-self' },
             { text: '239. 滑动窗口最大值', link: '/dsa/leetcode/239-sliding-window-maximum' },
             { text: '643. 子数组最大平均数 I', link: '/dsa/leetcode/643-maximum-average-subarray-i' },
-            { text: '1456. 定长子串中元音的最大数目', link: '/dsa/leetcode/1456-maximum-number-of-vowels-in-a-substring-of-given-length' }
+            { text: '1343. 大小为 K 且平均值大于等于阈值的子数组数目', link: '/dsa/leetcode/1343-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold' },
+            { text: '1456. 定长子串中元音的最大数目', link: '/dsa/leetcode/1456-maximum-number-of-vowels-in-a-substring-of-given-length' },
+            { text: '2090. 半径为 k 的子数组平均值', link: '/dsa/leetcode/2090-k-radius-subarray-averages' }
           ]
         },
         {
