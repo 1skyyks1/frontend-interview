@@ -31,6 +31,7 @@ export default defineConfig({
           text: 'LeetCode',
           collapsed: false,
           items: [
+            { text: '3. 无重复字符的最长子串', link: '/dsa/leetcode/3-longest-substring-without-repeating-characters' },
             { text: '41. 缺失的第一个正数', link: '/dsa/leetcode/41-first-missing-positive' },
             { text: '53. 最大子数组和', link: '/dsa/leetcode/53-maximum-subarray' },
             { text: '56. 合并区间', link: '/dsa/leetcode/56-merge-intervals' },
@@ -43,7 +44,9 @@ export default defineConfig({
             { text: '1456. 定长子串中元音的最大数目', link: '/dsa/leetcode/1456-maximum-number-of-vowels-in-a-substring-of-given-length' },
             { text: '2090. 半径为 k 的子数组平均值', link: '/dsa/leetcode/2090-k-radius-subarray-averages' },
             { text: '2379. 得到 K 个黑块的最少涂色次数', link: '/dsa/leetcode/2379-minimum-recolors-to-get-k-consecutive-black-blocks' },
-            { text: '2841. 几乎唯一子数组的最大和', link: '/dsa/leetcode/2841-maximum-sum-of-almost-unique-subarray' }
+            { text: '2841. 几乎唯一子数组的最大和', link: '/dsa/leetcode/2841-maximum-sum-of-almost-unique-subarray' },
+            { text: '1423. 可获得的最大点数', link: '/dsa/leetcode/1423-maximum-points-you-can-obtain-from-cards' },
+            { text: '3090. 每个字符最多出现两次的最长子字符串', link: '/dsa/leetcode/3090-maximum-length-substring-with-two-occurrences' }
           ]
         },
         {

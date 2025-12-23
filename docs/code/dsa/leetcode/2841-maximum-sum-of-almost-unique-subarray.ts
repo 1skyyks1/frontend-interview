@@ -6,7 +6,7 @@
 function maxSum(nums: number[], m: number, k: number): number {
     let res = 0;
     let sum = 0;
-    const map = new Map();
+    const map = new Map<number, number>();
     for (let i = 0; i < nums.length; i++) {
         const right = nums[i];
         map.set(right, (map.get(right) || 0) + 1);
