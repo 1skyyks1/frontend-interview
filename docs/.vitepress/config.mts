@@ -33,6 +33,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '3. 无重复字符的最长子串', link: '/dsa/leetcode/3-longest-substring-without-repeating-characters' },
+            { text: '34. 在排序数组中查找元素的第一个和最后一个位置', link: '/dsa/leetcode/34-find-first-and-last-position-of-element-in-sorted-array' },
             { text: '41. 缺失的第一个正数', link: '/dsa/leetcode/41-first-missing-positive' },
             { text: '53. 最大子数组和', link: '/dsa/leetcode/53-maximum-subarray' },
             { text: '56. 合并区间', link: '/dsa/leetcode/56-merge-intervals' },
