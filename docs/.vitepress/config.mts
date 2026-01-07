@@ -34,6 +34,7 @@ export default defineConfig({
           items: [
             { text: '3. 无重复字符的最长子串', link: '/dsa/leetcode/3-longest-substring-without-repeating-characters' },
             { text: '34. 在排序数组中查找元素的第一个和最后一个位置', link: '/dsa/leetcode/34-find-first-and-last-position-of-element-in-sorted-array' },
+            { text: '35. 搜索插入位置', link: '/dsa/leetcode/35-search-insert-position' },
             { text: '41. 缺失的第一个正数', link: '/dsa/leetcode/41-first-missing-positive' },
             { text: '53. 最大子数组和', link: '/dsa/leetcode/53-maximum-subarray' },
             { text: '56. 合并区间', link: '/dsa/leetcode/56-merge-intervals' },
@@ -44,6 +45,7 @@ export default defineConfig({
             { text: '239. 滑动窗口最大值', link: '/dsa/leetcode/239-sliding-window-maximum' },
             { text: '242. 有效的字母异位词', link: '/dsa/leetcode/242-valid-anagram' },
             { text: '643. 子数组最大平均数 I', link: '/dsa/leetcode/643-maximum-average-subarray-i' },
+            { text: '704. 二分查找', link: '/dsa/leetcode/704-binary-search' },
             { text: '713. 乘积小于 K 的子数组', link: '/dsa/leetcode/713-subarray-product-less-than-k' },
             { text: '904. 水果成篮', link: '/dsa/leetcode/904-fruit-into-baskets' },
             { text: '930. 和相同的二元子数组', link: '/dsa/leetcode/930-binary-subarrays-with-sum' },
