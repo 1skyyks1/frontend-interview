@@ -51,6 +51,7 @@ export default defineConfig({
             { text: '904. 水果成篮', link: '/dsa/leetcode/904-fruit-into-baskets' },
             { text: '930. 和相同的二元子数组', link: '/dsa/leetcode/930-binary-subarrays-with-sum' },
             { text: '1004. 最大连续1的个数 III', link: '/dsa/leetcode/1004-max-consecutive-ones-iii' },
+            { text: '1170. 比较字符串最小字母出现频次', link: '/dsa/leetcode/1170-compare-strings-by-frequency-of-the-smallest-character' },
             { text: '1208. 尽可能使字符串相等', link: '/dsa/leetcode/1208-get-equal-substrings-within-budget' },
             { text: '1248. 统计「优美子数组」', link: '/dsa/leetcode/1248-count-number-of-nice-subarrays' },
             { text: '1343. 大小为 K 且平均值大于等于阈值的子数组数目', link: '/dsa/leetcode/1343-number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold' },
