@@ -69,7 +69,7 @@
 - **v-show**：适用于需要频繁切换显示状态的场景
 - **v-if**：适用于条件不常变化、或初始条件为假可延迟渲染的场景
 
-## Vue 实例挂载
+## Vue 实例创建
 
 ```js
 function Vue (options) {
@@ -82,22 +82,40 @@ function Vue (options) {
 }
 ```
 
-### 初始化流程
+`new Vue()` 时会调用 `_init` 方法，_init 初始化生命周期、事件、响应式数据（props / data / computed / watch），触发 beforeCreate、created
 
-`new Vue()` 时会调用 `_init` 方法，依次完成：
+> [!IMPORTANT]
+> 此时 DOM 尚未生成
 
-1. 定义 `$set`、`$get`、`$delete`、`$watch` 等方法
-2. 定义 `$on`、`$off`、`$emit` 等事件
-3. 定义 `_update`、`$forceUpdate`、`$destroy` 生命周期
-4. 调用 `$mount` 进行页面挂载
+### Vue2 响应式原理
 
-### 挂载流程
+遍历 data 中的属性，用 Object.defineProperty 将其转换为 getter/setter。getter 收集依赖，setter 派发更新。
 
-挂载主要通过 `mountComponent` 方法完成：
+每个组件实例都对应一个 watcher，
+在组件渲染过程中会访问响应式数据，从而将 watcher 收集为依赖。
+当数据发生变化时，setter 会通知对应的 watcher 重新计算，
+最终触发组件重新渲染。
 
-1. 定义 `updateComponent` 更新函数
-2. 执行 `render` 生成虚拟 DOM
-3. 调用 `_update` 将虚拟 DOM 转换为真实 DOM 并渲染到页面
+### Vue3 响应式原理
+
+Vue 3 不再用 Object.defineProperty，而是使用 Proxy 代理对象，
+通过拦截 get / set 操作来实现依赖收集和触发更新。
+
+| Vue 2                 | Vue 3               |
+| --------------------- | ------------------- |
+| Object.defineProperty | Proxy               |
+| Dep                   | WeakMap / Map / Set |
+| watcher               | ReactiveEffect      |
+| getter / setter       | track / trigger     |
+
+
+## Vue 实例挂载
+
+调用 `$mount(el)` 开始挂载，`$mount` 内部调用 `mountComponent(vm, el)`
+通过 mountComponent 创建一个渲染 watcher，
+watcher 首次执行时调用 render 生成虚拟 DOM，
+再通过 _update 转换为真实 DOM 并插入页面，
+触发 beforeMount / mounted 生命周期
 
 ## 生命周期
 
@@ -165,18 +183,107 @@ function Vue (options) {
 
 1. **条件在循环外部**：用 `<template>` 包裹，在外层进行 `v-if` 判断
 
-    ```vue
-    <template v-if="shouldShow">
-      <div v-for="item in items" :key="item.id">{{ item.name }}</div>
-    </template>
-    ```
+```vue
+<template v-if="shouldShow">
+  <div v-for="item in items" :key="item.id">{{ item.name }}</div>
+</template>
+```
 
 2. **条件在循环内部**：使用 `computed` 提前过滤数据
 
-    ```js
-    computed: {
-      filteredItems() {
-        return this.items.filter(item => item.isActive)
-      }
-    }
-    ```
+```js
+computed: {
+  filteredItems() {
+    return this.items.filter(item => item.isActive)
+  }
+}
+```
+
+## slot
+
+slot 又名插槽，用于组件内容分发。
+
+### 默认插槽
+- 匿名插槽，父组件内容填充子组件默认位置
+- 一个组件只能有一个匿名插槽
+
+```vue
+<!-- 子组件 -->
+<template>
+  <div>
+    <slot></slot>
+  </div>
+</template>
+
+<!-- 父组件 -->
+<Card>
+  <p>这是插槽内容</p>
+</Card>
+
+<!-- 输出 -->
+<div class="card">
+  <p>这是插槽内容</p>
+</div>
+```
+
+### 具名插槽
+- 子组件提供多个插槽，父组件用 name 指定
+- 一个组件可以出现多个具名插槽
+
+```vue
+<!-- 子组件 -->
+<template>
+  <div>
+    <slot name="header"></slot>
+    <slot></slot>
+    <slot name="footer"></slot>
+  </div>
+</template>
+
+<!-- 父组件 -->
+<Card>
+  <template #header>
+    <p>这是插槽内容</p>
+  </template>
+  <p>这是插槽内容</p>
+  <template #footer>
+    <p>这是插槽内容</p>
+  </template>
+</Card>
+```
+
+### 作用域插槽
+- 父组件可以访问子组件内部的数据，由父组件决定渲染内容
+- 可以是默认插槽或具名插槽
+
+```vue
+<!-- 子组件 -->
+<template>
+  <div>
+    <slot :user="user"></slot>
+  </div>
+</template>
+
+<!-- 父组件 -->
+<Card>
+  <template #default="slotProps">
+    <p>{{ slotProps.user.name }}</p>
+  </template>
+</Card>
+```
+
+### 实现原理
+
+1. **编译阶段**：`<slot>` 被编译为占位符节点存入虚拟 DOM
+2. **父组件处理**：父组件传入的内容被编译为 VNodes
+3. **渲染阶段**：渲染时用父组件的 VNodes 替换子组件的 `<slot>` 占位符
+4. **作用域插槽**：子组件通过 props 向父组件暴露数据，父组件决定如何渲染
+
+### Vue2 vs Vue3 语法对比
+
+| 特性 | Vue 2 | Vue 3 |
+| --- | --- | --- |
+| 默认插槽 | `<slot></slot>` | `<slot></slot>` |
+| 具名插槽（子） | `<slot name="header">` | `<slot name="header">` |
+| 具名插槽（父） | `<template slot="header">` | `<template #header>` |
+| 作用域插槽 | `<template slot-scope="props">` | `<template #default="{ props }">` |
