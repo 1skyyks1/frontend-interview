@@ -90,7 +90,8 @@ export default defineConfig({
           text: '常考/热点题',
           collapsed: false,
           items: [
-
+            { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
+            { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' }
           ]
         }
       ],

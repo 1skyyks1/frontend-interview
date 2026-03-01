@@ -69,6 +69,38 @@
 - **v-show**：适用于需要频繁切换显示状态的场景
 - **v-if**：适用于条件不常变化、或初始条件为假可延迟渲染的场景
 
+## v-if & v-for
+
+- **v-if**：条件性渲染，表达式为 `true` 时才渲染
+- **v-for**：基于数组/对象渲染列表，语法为 `item in items`
+
+> [!IMPORTANT]
+> 使用 `v-for` 时建议设置唯一的 `key` 值，便于 diff 算法优化。
+
+### 优先级问题
+
+**Vue 2 中 `v-for` 优先级高于 `v-if`**，同时使用会导致性能浪费（每次渲染先循环再判断条件）。
+
+**解决方案**：
+
+1. **条件在循环外部**：用 `<template>` 包裹，在外层进行 `v-if` 判断
+
+```vue
+<template v-if="shouldShow">
+  <div v-for="item in items" :key="item.id">{{ item.name }}</div>
+</template>
+```
+
+2. **条件在循环内部**：使用 `computed` 提前过滤数据
+
+```vue
+computed: {
+  filteredItems() {
+    return this.items.filter(item => item.isActive)
+  }
+}
+```
+
 ## Vue 实例创建
 
 ```js
@@ -167,38 +199,6 @@ watcher 首次执行时调用 render 生成虚拟 DOM，
 > [!TIP]
 > DOM 已渲染但数据异步填充可能导致页面闪动，需注意用户体验。
 
-## v-if & v-for
-
-- **v-if**：条件性渲染，表达式为 `true` 时才渲染
-- **v-for**：基于数组/对象渲染列表，语法为 `item in items`
-
-> [!IMPORTANT]
-> 使用 `v-for` 时建议设置唯一的 `key` 值，便于 diff 算法优化。
-
-### 优先级问题
-
-**Vue 2 中 `v-for` 优先级高于 `v-if`**，同时使用会导致性能浪费（每次渲染先循环再判断条件）。
-
-**解决方案**：
-
-1. **条件在循环外部**：用 `<template>` 包裹，在外层进行 `v-if` 判断
-
-```vue
-<template v-if="shouldShow">
-  <div v-for="item in items" :key="item.id">{{ item.name }}</div>
-</template>
-```
-
-2. **条件在循环内部**：使用 `computed` 提前过滤数据
-
-```js
-computed: {
-  filteredItems() {
-    return this.items.filter(item => item.isActive)
-  }
-}
-```
-
 ## slot
 
 slot 又名插槽，用于组件内容分发。
@@ -287,3 +287,5 @@ slot 又名插槽，用于组件内容分发。
 | 具名插槽（子） | `<slot name="header">` | `<slot name="header">` |
 | 具名插槽（父） | `<template slot="header">` | `<template #header>` |
 | 作用域插槽 | `<template slot-scope="props">` | `<template #default="{ props }">` |
+
+## $nextTick
