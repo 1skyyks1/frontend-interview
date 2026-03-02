@@ -91,6 +91,8 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
+            { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
+            { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
             { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' }
           ]
         }
