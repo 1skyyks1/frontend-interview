@@ -90,6 +90,8 @@ export default defineConfig({
           text: '常考/热点题',
           collapsed: false,
           items: [
+            { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
+            { text: '142. 环形链表 II', link: '/dsa/hot/142-linked-list-cycle-ii' },
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
             { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
