@@ -90,6 +90,10 @@ export default defineConfig({
           text: '常考/热点题',
           collapsed: false,
           items: [
+            { text: '2. 两数相加', link: '/dsa/hot/2-add-two-numbers' },
+            { text: '19. 删除链表的倒数第 N 个结点', link: '/dsa/hot/19-remove-nth-node-from-end-of-list' },
+            { text: '21. 合并两个有序链表', link: '/dsa/hot/21-merge-two-sorted-lists' },
+            { text: '24. 两两交换链表中的节点', link: '/dsa/hot/24-swap-nodes-in-pairs' },
             { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
             { text: '142. 环形链表 II', link: '/dsa/hot/142-linked-list-cycle-ii' },
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
@@ -105,6 +109,7 @@ export default defineConfig({
           text: '手撕实现',
           items: [
             { text: '总览', link: '/impls/' },
+            { text: 'JSON.stringify', link: '/impls/json-stringify' },
             { text: 'Promise.all', link: '/impls/promise-all' },
             { text: 'Throttle 节流', link: '/impls/throttle' }
           ]
