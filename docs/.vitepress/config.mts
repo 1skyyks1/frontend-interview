@@ -97,12 +97,16 @@ export default defineConfig({
             { text: '23. 合并 K 个升序链表', link: '/dsa/hot/23-merge-k-sorted-lists' },
             { text: '24. 两两交换链表中的节点', link: '/dsa/hot/24-swap-nodes-in-pairs' },
             { text: '25. K 个一组翻转链表', link: '/dsa/hot/25-reverse-nodes-in-k-group' },
+            { text: '94. 二叉树的中序遍历', link: '/dsa/hot/94-binary-tree-inorder-traversal' },
+            { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
             { text: '138. 随机链表的复制', link: '/dsa/hot/138-copy-list-with-random-pointer' },
             { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
             { text: '142. 环形链表 II', link: '/dsa/hot/142-linked-list-cycle-ii' },
+            { text: '146. LRU 缓存', link: '/dsa/hot/146-lru-cache' },
             { text: '148. 排序链表', link: '/dsa/hot/148-sort-list' },
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
             { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
+            { text: '226. 翻转二叉树', link: '/dsa/hot/226-invert-binary-tree' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
             { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' }
           ]

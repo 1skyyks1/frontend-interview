@@ -161,3 +161,66 @@ console.log(obj.b.x); // 10，互不影响
 
 - `reduce()`：遍历数组累积  
   `let sum = arr.reduce((prev, now, index, self) => { return prev + now }, initialValue)`
+
+## 事件循环 Event Loop
+
+JavaScript 是单线程的，但浏览器需要处理网络请求、定时器、UI事件等异步任务，所以引入了事件循环机制来实现非阻塞执行。
+
+整个执行流程可以简单理解为：
+
+1. 同步任务进入执行栈立即执行
+
+2. 异步任务会交给宿主环境（如浏览器，Node.js）处理
+
+3. 当异步任务完成后，其回调函数会进入任务队列
+
+4. 当执行栈清空后，事件循环会从任务队列中取任务执行
+
+为了更精细控制执行顺序，任务又分为宏任务和微任务
+
+每次事件循环执行一个宏任务，常见宏任务有： `script（整体代码）`、`setTimeout / setInterval`、`I/O`、UI渲染
+
+微任务会在当前宏任务结束后立即执行完，常见微任务： `Promise.then`、`MutationObserver`、`queueMicrotask`、`process.nextTick（Node）`
+
+## 数据类型
+
+一共有八种数据类型：Undefined、Null、Boolean、Number、String、Object、Symbol、BigInt
+
+分为原始数据类型和引用数据类型，Object为引用类型，数组函数等都属于对象。
+
+原始类型存在栈中，空间小且固定；引用类型存在堆中，占据空间大且不固定，引用类型在栈中存储了指针，指向堆中该数据的起始地址
+
+### 类型判断
+
+- typeof
+
+对象、数组、null都会被判断为object，其他都正确（function会被判断为function）`typeof function(){}`
+- instanceof
+
+可以正确判断引用类型，原理是在原型链中寻找该类型的原型`[] instanceof Array`
+- constructor
+
+constructor属性指向对象的构造函数，可以用来判断实例类型，但如果对象修改了原型，constructor可能不准确
+`({}).constructor === Object`
+- Object.prototype.toString.call()
+
+使用Object对象的原型方法toString来判断数据类型，返回字符串格式：[object 类型]，类型是JS内部[[Class]]标记。
+
+每个JS对象内部都有一个隐藏属性[[Class]]，用来标识对象的内在类型。
+```javascript
+Object.prototype.toString.call(123);        // [object Number]
+Object.prototype.toString.call('hello');    // [object String]
+Object.prototype.toString.call(true);       // [object Boolean]
+Object.prototype.toString.call(null);       // [object Null]
+Object.prototype.toString.call(undefined);  // [object Undefined]
+Object.prototype.toString.call(Symbol());   // [object Symbol]
+Object.prototype.toString.call([]);         // [object Array]
+Object.prototype.toString.call({});         // [object Object]
+Object.prototype.toString.call(()=>{});     // [object Function]
+Object.prototype.toString.call(new Date()); // [object Date]
+Object.prototype.toString.call(/abc/);      // [object RegExp]
+```
+
+
+
+
