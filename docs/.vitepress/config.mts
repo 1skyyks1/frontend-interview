@@ -98,6 +98,8 @@ export default defineConfig({
             { text: '24. 两两交换链表中的节点', link: '/dsa/hot/24-swap-nodes-in-pairs' },
             { text: '25. K 个一组翻转链表', link: '/dsa/hot/25-reverse-nodes-in-k-group' },
             { text: '94. 二叉树的中序遍历', link: '/dsa/hot/94-binary-tree-inorder-traversal' },
+            { text: '101. 对称二叉树', link: '/dsa/hot/101-symmetric-tree' },
+            { text: '102. 二叉树的层序遍历', link: '/dsa/hot/102-binary-tree-level-order-traversal' },
             { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
             { text: '138. 随机链表的复制', link: '/dsa/hot/138-copy-list-with-random-pointer' },
             { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
@@ -108,7 +110,8 @@ export default defineConfig({
             { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
             { text: '226. 翻转二叉树', link: '/dsa/hot/226-invert-binary-tree' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
-            { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' }
+            { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' },
+            { text: '543. 二叉树的直径', link: '/dsa/hot/543-diameter-of-binary-tree' }
           ]
         }
       ],
@@ -121,6 +124,16 @@ export default defineConfig({
             { text: 'JSON.stringify', link: '/impls/json-stringify' },
             { text: 'Promise.all', link: '/impls/promise-all' },
             { text: 'Throttle 节流', link: '/impls/throttle' }
+          ]
+        },
+        {
+          text: '排序算法',
+          items: [
+            { text: '冒泡排序', link: '/impls/bubble-sort' },
+            { text: '选择排序', link: '/impls/selection-sort' },
+            { text: '插入排序', link: '/impls/insertion-sort' },
+            { text: '快速排序', link: '/impls/quick-sort' },
+            { text: '归并排序', link: '/impls/merge-sort' }
           ]
         }
       ],
