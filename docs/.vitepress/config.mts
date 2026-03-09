@@ -101,6 +101,7 @@ export default defineConfig({
             { text: '101. 对称二叉树', link: '/dsa/hot/101-symmetric-tree' },
             { text: '102. 二叉树的层序遍历', link: '/dsa/hot/102-binary-tree-level-order-traversal' },
             { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
+            { text: '108. 将有序数组转换为二叉搜索树', link: '/dsa/hot/108-convert-sorted-array-to-binary-search-tree' },
             { text: '138. 随机链表的复制', link: '/dsa/hot/138-copy-list-with-random-pointer' },
             { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
             { text: '142. 环形链表 II', link: '/dsa/hot/142-linked-list-cycle-ii' },
