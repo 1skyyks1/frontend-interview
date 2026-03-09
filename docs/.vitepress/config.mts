@@ -98,6 +98,7 @@ export default defineConfig({
             { text: '24. 两两交换链表中的节点', link: '/dsa/hot/24-swap-nodes-in-pairs' },
             { text: '25. K 个一组翻转链表', link: '/dsa/hot/25-reverse-nodes-in-k-group' },
             { text: '94. 二叉树的中序遍历', link: '/dsa/hot/94-binary-tree-inorder-traversal' },
+            { text: '98. 验证二叉搜索树', link: '/dsa/hot/98-validate-binary-search-tree' },
             { text: '101. 对称二叉树', link: '/dsa/hot/101-symmetric-tree' },
             { text: '102. 二叉树的层序遍历', link: '/dsa/hot/102-binary-tree-level-order-traversal' },
             { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
@@ -110,6 +111,7 @@ export default defineConfig({
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
             { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
             { text: '226. 翻转二叉树', link: '/dsa/hot/226-invert-binary-tree' },
+            { text: '230. 二叉搜索树中第 K 小的元素', link: '/dsa/hot/230-kth-smallest-element-in-a-bst' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
             { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' },
             { text: '543. 二叉树的直径', link: '/dsa/hot/543-diameter-of-binary-tree' }
