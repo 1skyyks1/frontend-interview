@@ -88,7 +88,7 @@ export default defineConfig({
           ]
         },
         {
-          text: '常考/热点题',
+          text: 'HOT 100',
           collapsed: false,
           items: [
             { text: '2. 两数相加', link: '/dsa/hot/2-add-two-numbers' },
@@ -109,12 +109,24 @@ export default defineConfig({
             { text: '146. LRU 缓存', link: '/dsa/hot/146-lru-cache' },
             { text: '148. 排序链表', link: '/dsa/hot/148-sort-list' },
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
+            { text: '199. 二叉树的右视图', link: '/dsa/hot/199-binary-tree-right-side-view' },
             { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
             { text: '226. 翻转二叉树', link: '/dsa/hot/226-invert-binary-tree' },
             { text: '230. 二叉搜索树中第 K 小的元素', link: '/dsa/hot/230-kth-smallest-element-in-a-bst' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
             { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' },
             { text: '543. 二叉树的直径', link: '/dsa/hot/543-diameter-of-binary-tree' }
+          ]
+        },
+        {
+          text: '面经',
+          collapsed: false,
+          items: [
+            { text: '1. 数组分组 groupBy', link: '/dsa/interview/1-group-by' },
+            { text: '2. 对象扁平化', link: '/dsa/interview/2-flatten' },
+            { text: '3. 数组去重', link: '/dsa/interview/3-unique' },
+            { text: '4. 实现最小栈', link: '/dsa/interview/4-stack' },
+            { text: '5. 数组三等分', link: '/dsa/interview/5-split-three' }
           ]
         }
       ],
