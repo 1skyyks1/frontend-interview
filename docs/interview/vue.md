@@ -288,4 +288,64 @@ slot 又名插槽，用于组件内容分发。
 | 具名插槽（父） | `<template slot="header">` | `<template #header>` |
 | 作用域插槽 | `<template slot-scope="props">` | `<template #default="{ props }">` |
 
-## $nextTick
+## Vue2 和 Vue3 的区别
+
+### 1. 响应式系统
+
+**Vue 2：Object.defineProperty**
+
+- **原理**：递归遍历 data 中的属性，给每个属性添加 getter/setter
+- **缺点**：
+  - 无法监听对象属性的新增和删除
+  - 无法直接监听数组索引和长度的变化（这也是为什么需要 `Vue.set` 的原因）
+
+**Vue 3：Proxy**
+
+- **原理**：直接代理整个对象，而不是属性
+- **优点**：
+  - 完美支持对象动态属性和数组
+  - 性能更好，因为它是惰性递归（只有访问到深层属性时才会进行代理）
+
+### 2. API 风格
+
+**Vue 2：Options API（选项式）**
+
+- 代码按 `data`、`methods`、`computed` 分块
+- **痛点**：逻辑复杂时，同一个功能的代码会散落在不同的选项中
+
+**Vue 3：Composition API（组合式）**
+
+- 使用 `setup()` 函数，配合 `ref` 和 `reactive`
+- **优点**：
+  - 逻辑关注点更集中
+  - 逻辑复用变得极其简单
+
+### 3. 性能与体积
+
+**虚拟 DOM 优化**
+
+- **Patch Flag（静态标记）**：Vue 3 会标记哪些节点是动态的，对比时跳过所有静态节点
+- **静态提升（Hoisting）**：模板中的静态内容会被提升到 render 函数之外，避免重复创建
+- **Tree-shaking**：Vue 3 采用模块化设计，如果你没用到 `Transition` 或 `v-model`，最终打包的代码里就不会包含它们，体积更小
+
+### 4. 其他改进
+
+- Vue 3 组件不再强制要求只有一个根标签，组件现在支持有多个根节点
+
+## 为什么data是函数
+
+因为组件是用来复用的。
+对象是引用类型，如果 `data` 是普通对象，那么所有组件实例将共享同一份数据。
+
+每创建一个新的组件实例，Vue 都会调用一次 `data()` 函数。
+函数每次执行都会返回一个全新的对象，从而实现组件状态的隔离。
+
+## Vue2如何监听数组
+
+Vue2 的响应式核心是 `Object.defineProperty`，只能拦截已有属性的 `getter/setter`
+因此无法监听数组的下标赋值和 length 修改
+
+Vue2 重写了 `push、pop、shift、unshift、splice、sort、reverse` 这 7 个会改变数组内容的方法。
+在这些方法执行后调用依赖管理器 `dep.notify()` 触发视图更新。
+每个被观察的数组或对象内部都会有一个隐藏的 `__ob__` 属性，
+对应一个 Observer 实例，其中保存了 dep 用于管理依赖。

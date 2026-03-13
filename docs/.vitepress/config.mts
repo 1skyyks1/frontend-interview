@@ -164,6 +164,7 @@ export default defineConfig({
             { text: 'Vue', link: '/interview/vue' },
             { text: '计网', link: '/interview/network' },
             { text: 'Webpack', link: '/interview/webpack' },
+            { text: '场景题', link: '/interview/scenario' }
           ]
         }
       ]

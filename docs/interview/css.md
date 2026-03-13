@@ -2,7 +2,7 @@
 
 ## 隐藏元素的方式
 
-```css
+```
 /* 完全从文档流中移除，不占据任何空间 */
 display: none;
 
@@ -49,7 +49,7 @@ dom.clientWidth;
 
 ## absolute 和 relative 的区别？fixed 会脱离文档流吗？
 
-```css
+```
 /* 仍占据文档流的位置，top/bottom/left/right 相对原始位置偏移。
    用于微调和作为 absolute 子元素的参考点 */
 position: relative;
@@ -112,11 +112,13 @@ position: fixed;
 }
 ```
 
-## 盒模型，具体属性
+## 盒模型
 
-CSS 的一个标准，每个元素都被视为一个矩形盒子，由内容（content）、内边距（padding）、边框（border）和外边距（margin）组成。
+用于描述元素布局和占用空间的基础概念。每个元素都被视为一个矩形盒子，由内容（content）、内边距（padding）、边框（border）和外边距（margin）组成。
 
 属性：content（`width` / `height`）、`padding`、`border`、`margin`
+
+### box-sizing 控制元素的宽高计算方式
 
 `box-sizing`: `content-box`（默认） | `border-box` | `inherit`
 
@@ -125,3 +127,19 @@ CSS 的一个标准，每个元素都被视为一个矩形盒子，由内容（c
 `border-box`: `width` / `height` 包含 `padding` 和 `border`
 
 `inherit`: 由父元素继承
+
+## 响应式单位
+
+能够根据屏幕尺寸、视口大小或父元素尺寸变化而自动调整的单位，常见可以分为 **相对单位、视口单位和百分比单位**。
+
+相对单位主要包括 `em` 和 `rem`。
+`em` 是相对于父元素的 `font-size` 计算的，如果存在多层嵌套，数值会不断叠加放大，因此在复杂布局中不太容易控制。
+`rem` 是相对于根元素 `html` 的 `font-size` 计算的，不会受到父元素影响，因此更稳定，移动端适配中经常使用 `rem` 方案， 通过动态修改 `html` 的 `font-size` 来实现整体缩放。
+
+视口单位是相对于浏览器视口（viewport）尺寸的单位，包括 `vw`、`vh`、`vmin` 和 `vmax`。
+其中 `1vw` 表示视口宽度的 1%，`1vh` 表示视口高度的 1%。
+`vmin` 取 `vw` 和 `vh` 中较小的值，`vmax` 取较大的值。
+视口单位可以直接根据屏幕尺寸变化进行自适应。
+
+百分比%也是一种常见的响应式单位，它通常相对于父元素尺寸进行计算，例如 `width: 50%` 表示父元素宽度的一半。
+需要注意的是，`padding` 和 `margin` 的百分比值是基于父元素的宽度计算的。
