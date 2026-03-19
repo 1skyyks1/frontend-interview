@@ -102,6 +102,7 @@ export default defineConfig({
             { text: '101. 对称二叉树', link: '/dsa/hot/101-symmetric-tree' },
             { text: '102. 二叉树的层序遍历', link: '/dsa/hot/102-binary-tree-level-order-traversal' },
             { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
+            { text: '105. 从前序与中序遍历序列构造二叉树', link: '/dsa/hot/105-construct-binary-tree-from-preorder-and-inorder-traversal' },
             { text: '108. 将有序数组转换为二叉搜索树', link: '/dsa/hot/108-convert-sorted-array-to-binary-search-tree' },
             { text: '138. 随机链表的复制', link: '/dsa/hot/138-copy-list-with-random-pointer' },
             { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
@@ -126,7 +127,8 @@ export default defineConfig({
             { text: '2. 对象扁平化', link: '/dsa/interview/2-flatten' },
             { text: '3. 数组去重', link: '/dsa/interview/3-unique' },
             { text: '4. 实现最小栈', link: '/dsa/interview/4-stack' },
-            { text: '5. 数组三等分', link: '/dsa/interview/5-split-three' }
+            { text: '5. 数组三等分', link: '/dsa/interview/5-split-three' },
+            { text: '9. URL 反转', link: '/dsa/interview/9-reverse-url' }
           ]
         }
       ],

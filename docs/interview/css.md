@@ -63,13 +63,14 @@ position: absolute;
 position: fixed;
 ```
 
-## 垂直居中的方式
+## 水平垂直居中的方式
 
 ```css
 /* 1. 使用 Flex */
 .box {
     display: flex;
-    align-item: center;
+    justify-content: center; // 主轴居中
+    align-items: center; // 交叉轴居中
 }
 
 /* 2. 使用 Grid */
@@ -143,3 +144,4 @@ position: fixed;
 
 百分比%也是一种常见的响应式单位，它通常相对于父元素尺寸进行计算，例如 `width: 50%` 表示父元素宽度的一半。
 需要注意的是，`padding` 和 `margin` 的百分比值是基于父元素的宽度计算的。
+
