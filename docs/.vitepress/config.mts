@@ -104,6 +104,7 @@ export default defineConfig({
             { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
             { text: '105. 从前序与中序遍历序列构造二叉树', link: '/dsa/hot/105-construct-binary-tree-from-preorder-and-inorder-traversal' },
             { text: '108. 将有序数组转换为二叉搜索树', link: '/dsa/hot/108-convert-sorted-array-to-binary-search-tree' },
+            { text: '124. 二叉树中的最大路径和', link: '/dsa/hot/124-binary-tree-maximum-path-sum' },
             { text: '138. 随机链表的复制', link: '/dsa/hot/138-copy-list-with-random-pointer' },
             { text: '141. 环形链表', link: '/dsa/hot/141-linked-list-cycle' },
             { text: '142. 环形链表 II', link: '/dsa/hot/142-linked-list-cycle-ii' },
@@ -115,7 +116,9 @@ export default defineConfig({
             { text: '226. 翻转二叉树', link: '/dsa/hot/226-invert-binary-tree' },
             { text: '230. 二叉搜索树中第 K 小的元素', link: '/dsa/hot/230-kth-smallest-element-in-a-bst' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
+            { text: '236. 二叉树的最近公共祖先', link: '/dsa/hot/236-lowest-common-ancestor-of-a-binary-tree' },
             { text: '240. 搜索二维矩阵 II', link: '/dsa/hot/240-search-a-2d-matrix-ii' },
+            { text: '437. 路径总和 III', link: '/dsa/hot/437-path-sum-iii' },
             { text: '543. 二叉树的直径', link: '/dsa/hot/543-diameter-of-binary-tree' }
           ]
         },
