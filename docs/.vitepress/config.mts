@@ -32,7 +32,9 @@ export default defineConfig({
           text: 'LeetCode',
           collapsed: false,
           items: [
+            { text: '1. 两数之和', link: '/dsa/leetcode/1-two-sum' },
             { text: '3. 无重复字符的最长子串', link: '/dsa/leetcode/3-longest-substring-without-repeating-characters' },
+            { text: '20. 有效的括号', link: '/dsa/leetcode/20-valid-parentheses' },
             { text: '34. 在排序数组中查找元素的第一个和最后一个位置', link: '/dsa/leetcode/34-find-first-and-last-position-of-element-in-sorted-array' },
             { text: '35. 搜索插入位置', link: '/dsa/leetcode/35-search-insert-position' },
             { text: '41. 缺失的第一个正数', link: '/dsa/leetcode/41-first-missing-positive' },
@@ -79,6 +81,7 @@ export default defineConfig({
             { text: '3258. 统计满足 K 约束的子字符串数量 I', link: '/dsa/leetcode/3258-count-substrings-that-satisfy-k-constraint-i' },
             { text: '3298. 统计重新排列后包含另一个字符串的子字符串数目 II', link: '/dsa/leetcode/3298-count-substrings-that-can-be-rearranged-to-contain-a-string-ii' },
             { text: '3325. 字符至少出现 K 次的子字符串 I', link: '/dsa/leetcode/3325-count-substrings-with-k-frequency-characters-i' },
+            { text: '415. 字符串相加', link: '/dsa/leetcode/415-add-strings' },
             { text: '3634. 使数组平衡的最少移除数目', link: '/dsa/leetcode/3634-minimum-removals-to-balance-array' }
           ]
         },
