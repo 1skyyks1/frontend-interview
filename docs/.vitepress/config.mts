@@ -30,20 +30,14 @@ export default defineConfig({
         },
         {
           text: 'LeetCode',
-          collapsed: false,
+          collapsed: true,
           items: [
-            { text: '1. 两数之和', link: '/dsa/leetcode/1-two-sum' },
-            { text: '3. 无重复字符的最长子串', link: '/dsa/leetcode/3-longest-substring-without-repeating-characters' },
-            { text: '20. 有效的括号', link: '/dsa/leetcode/20-valid-parentheses' },
             { text: '34. 在排序数组中查找元素的第一个和最后一个位置', link: '/dsa/leetcode/34-find-first-and-last-position-of-element-in-sorted-array' },
             { text: '35. 搜索插入位置', link: '/dsa/leetcode/35-search-insert-position' },
             { text: '41. 缺失的第一个正数', link: '/dsa/leetcode/41-first-missing-positive' },
-            { text: '53. 最大子数组和', link: '/dsa/leetcode/53-maximum-subarray' },
             { text: '56. 合并区间', link: '/dsa/leetcode/56-merge-intervals' },
             { text: '73. 矩阵置零', link: '/dsa/leetcode/73-set-matrix-zeroes' },
             { text: '76. 最小覆盖子串', link: '/dsa/leetcode/76-minimum-window-substring' },
-            { text: '88. 合并两个有序数组', link: '/dsa/leetcode/88-merge-sorted-array' },
-            { text: '165. 比较版本号', link: '/dsa/leetcode/165-compare-version-numbers' },
             { text: '189. 轮转数组', link: '/dsa/leetcode/189-rotate-array' },
             { text: '238. 除自身以外数组的乘积', link: '/dsa/leetcode/238-product-of-array-except-self' },
             { text: '239. 滑动窗口最大值', link: '/dsa/leetcode/239-sliding-window-maximum' },
@@ -81,20 +75,19 @@ export default defineConfig({
             { text: '3258. 统计满足 K 约束的子字符串数量 I', link: '/dsa/leetcode/3258-count-substrings-that-satisfy-k-constraint-i' },
             { text: '3298. 统计重新排列后包含另一个字符串的子字符串数目 II', link: '/dsa/leetcode/3298-count-substrings-that-can-be-rearranged-to-contain-a-string-ii' },
             { text: '3325. 字符至少出现 K 次的子字符串 I', link: '/dsa/leetcode/3325-count-substrings-with-k-frequency-characters-i' },
-            { text: '415. 字符串相加', link: '/dsa/leetcode/415-add-strings' },
             { text: '3634. 使数组平衡的最少移除数目', link: '/dsa/leetcode/3634-minimum-removals-to-balance-array' }
           ]
         },
         {
           text: 'LCP',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: 'LCP 68. 美观的花束', link: '/dsa/leetcode/LCP-68' }
           ]
         },
         {
           text: 'HOT 100',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '2. 两数相加', link: '/dsa/hot/2-add-two-numbers' },
             { text: '19. 删除链表的倒数第 N 个结点', link: '/dsa/hot/19-remove-nth-node-from-end-of-list' },
@@ -102,12 +95,10 @@ export default defineConfig({
             { text: '23. 合并 K 个升序链表', link: '/dsa/hot/23-merge-k-sorted-lists' },
             { text: '24. 两两交换链表中的节点', link: '/dsa/hot/24-swap-nodes-in-pairs' },
             { text: '25. K 个一组翻转链表', link: '/dsa/hot/25-reverse-nodes-in-k-group' },
-            { text: '46. 全排列', link: '/dsa/hot/46-permutations' },
             { text: '78. 子集', link: '/dsa/hot/78-subsets' },
             { text: '94. 二叉树的中序遍历', link: '/dsa/hot/94-binary-tree-inorder-traversal' },
             { text: '98. 验证二叉搜索树', link: '/dsa/hot/98-validate-binary-search-tree' },
             { text: '101. 对称二叉树', link: '/dsa/hot/101-symmetric-tree' },
-            { text: '102. 二叉树的层序遍历', link: '/dsa/hot/102-binary-tree-level-order-traversal' },
             { text: '104. 二叉树的最大深度', link: '/dsa/hot/104-maximum-depth-of-binary-tree' },
             { text: '105. 从前序与中序遍历序列构造二叉树', link: '/dsa/hot/105-construct-binary-tree-from-preorder-and-inorder-traversal' },
             { text: '108. 将有序数组转换为二叉搜索树', link: '/dsa/hot/108-convert-sorted-array-to-binary-search-tree' },
@@ -119,7 +110,6 @@ export default defineConfig({
             { text: '148. 排序链表', link: '/dsa/hot/148-sort-list' },
             { text: '160. 相交链表', link: '/dsa/hot/160-intersection-of-two-linked-lists' },
             { text: '199. 二叉树的右视图', link: '/dsa/hot/199-binary-tree-right-side-view' },
-            { text: '206. 反转链表', link: '/dsa/hot/206-reverse-linked-list' },
             { text: '226. 翻转二叉树', link: '/dsa/hot/226-invert-binary-tree' },
             { text: '230. 二叉搜索树中第 K 小的元素', link: '/dsa/hot/230-kth-smallest-element-in-a-bst' },
             { text: '234. 回文链表', link: '/dsa/hot/234-palindrome-linked-list' },
@@ -130,14 +120,33 @@ export default defineConfig({
           ]
         },
         {
+          text: '高频',
+          collapsed: true,
+          items: [
+            { text: '3. 无重复字符的最长子串', link: '/dsa/high-frequency/3-longest-substring-without-repeating-characters' },
+            { text: '88. 合并两个有序数组', link: '/dsa/high-frequency/88-merge-sorted-array' },
+            { text: '165. 比较版本号', link: '/dsa/high-frequency/165-compare-version-numbers' },
+            { text: '20. 有效的括号', link: '/dsa/high-frequency/20-valid-parentheses' },
+            { text: '415. 字符串相加', link: '/dsa/high-frequency/415-add-strings' },
+            { text: '1. 两数之和', link: '/dsa/high-frequency/1-two-sum' },
+            { text: '46. 全排列', link: '/dsa/high-frequency/46-permutations' },
+            { text: '206. 反转链表', link: '/dsa/high-frequency/206-reverse-linked-list' },
+            { text: '102. 二叉树的层序遍历', link: '/dsa/high-frequency/102-binary-tree-level-order-traversal' },
+            { text: '53. 最大子数组和', link: '/dsa/high-frequency/53-maximum-subarray' }
+          ]
+        },
+        {
           text: '面经',
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: '1. 数组分组 groupBy', link: '/dsa/interview/1-group-by' },
             { text: '2. 对象扁平化', link: '/dsa/interview/2-flatten' },
             { text: '3. 数组去重', link: '/dsa/interview/3-unique' },
             { text: '4. 实现最小栈', link: '/dsa/interview/4-stack' },
             { text: '5. 数组三等分', link: '/dsa/interview/5-split-three' },
+            { text: '6. 树中查找节点', link: '/dsa/interview/6-find-tree-node' },
+            { text: '7. 控制并发请求', link: '/dsa/interview/7-request-limit' },
+            { text: '8. 手写深拷贝', link: '/dsa/interview/8-deep-clone' },
             { text: '9. URL 反转', link: '/dsa/interview/9-reverse-url' }
           ]
         }
